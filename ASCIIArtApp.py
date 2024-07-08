@@ -1,4 +1,4 @@
-from kivy.app import app
+from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.label import Label
@@ -22,8 +22,9 @@ class ASCIIArtApp(App):
         return self.layout
 
     def generate_ascii(self, instance):
-        text = self.input.textascii_art = pyfiglet.figlet_format(text)
+        text = self.input.text
+        ascii_art = pyfiglet.figlet_format(text)
         self.output.text = ascii_art
 
-if _name_== '_main_':
+if __name__== '_main_':
     ASCIIArtApp().run()
